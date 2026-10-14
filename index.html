@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Happy Durga Puja ✨</title>
+    <!-- CSS File Link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- SCREEN 1: Meme Loop Screen -->
+    <div id="screen-meme" class="screen active">
+        <div class="card">
+            <div id="meme-container" class="meme-container">
+                <img id="meme-pic" class="meme-media" src="" alt="Meme">
+            </div>
+            
+            <div id="video-container" class="video-box">
+                <video id="yes-video" src="5.mp4" autoplay loop muted playsinline></video>
+            </div>
+
+            <h2 id="meme-text">Sorry Maharani ji, wish karne mein late ho gaya... Maaf kiya? 🥺</h2>
+            <div class="btn-group">
+                <button id="btn-yes" class="btn btn-yes" onclick="handleYes()">Haan ❤️</button>
+                <button id="btn-no" class="btn btn-no" onclick="handleNo()">Nahi 😒</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN 2: Custom Numpad Lock Screen (552012) -->
+    <div id="screen-puzzle" class="screen">
+        <div class="lock-box" id="lock-card">
+            <h3 style="color:#ffcc00; margin-bottom:8px;">🔐 Secret Surprise Locked</h3>
+            <p id="hint-text" style="font-size:0.92rem; color:#ffeb99; line-height:1.4;">
+                Don't ask anyone 🤫<br><span style="font-size:0.8rem; color:#aaa;">(6-Digit Secret Code daalo)</span>
+            </p>
+            
+            <div class="pin-display" id="pin-view">_ _ _ _ _ _</div>
+
+            <div class="keypad">
+                <button class="key" onclick="pressKey('1')">1</button>
+                <button class="key" onclick="pressKey('2')">2</button>
+                <button class="key" onclick="pressKey('3')">3</button>
+                <button class="key" onclick="pressKey('4')">4</button>
+                <button class="key" onclick="pressKey('5')">5</button>
+                <button class="key" onclick="pressKey('6')">6</button>
+                <button class="key" onclick="pressKey('7')">7</button>
+                <button class="key" onclick="pressKey('8')">8</button>
+                <button class="key" onclick="pressKey('9')">9</button>
+                <button class="key" onclick="clearPin()" style="background:#5c1a1a; font-size:0.95rem;">Clear</button>
+                <button class="key" onclick="pressKey('0')">0</button>
+                <button class="key" onclick="checkPin()" style="background:#ff9900; color:#000; font-size:0.95rem;">Unlock 🔓</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN 3: Virtual Diya Screen -->
+    <div id="screen-diya" class="screen">
+        <p class="diya-instruction" id="diya-text">
+            Lock khul gaya! Par yahan pura andhera hai...<br>Chalo saath milkar Puja ki roshni karte hain ✨<br><br>
+            <strong style="color:#ffcc00; font-size:1.15rem;">Diye par tap karo 🪔</strong>
+        </p>
+        <div class="diya-container" onclick="lightDiya()">
+            <img src="diya.png" class="diya-img" alt="Diya" onerror="this.style.display='none'; document.getElementById('fallback-diya').style.display='block';">
+            <div id="fallback-diya" style="display:none;" class="diya-fallback">
+                <div class="flame" id="flame"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN 4: Direct Video Screen (video.mp4) -->
+    <div id="screen-puja" class="screen">
+        <h3 style="color:#ffcc00; letter-spacing: 1px; margin-bottom: 5px;">✨ Happy Durga Puja ✨</h3>
+        
+        <video id="puja-scene-video" class="direct-video" autoplay loop muted playsinline preload="auto">
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div id="vid-error" class="video-error-msg">⚠️ 'video.mp4' file load nahi ho rahi! Check karo ki file usi folder mein hai ya format sahi hai.</div>
+
+        <button class="btn btn-yes" style="width:92%; max-width:340px; margin-top:10px;" onclick="goToFinalMessage()">Mera Message Padho 💌</button>
+    </div>
+
+    <!-- SCREEN 5: Final Message & Happy Durga Puja Screen -->
+    <div id="screen-final" class="screen">
+        <h3 style="color:#ffcc00; margin-bottom:12px;">❤️ For My Devi Ji ❤️</h3>
+        
+        <div class="letter-box" id="typewriter"></div>
+
+        <div class="final-wish-box" id="bye-box">
+            <h1 class="final-wish-text">Happy Durga Puja! ❤️✨</h1>
+        </div>
+    </div>
+
+    <!-- JavaScript File Link -->
+    <script src="script.js"></script>
+</body>
+</html>
